@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>泰坦尼克号素描未删减版 | 官方视频门户_深度解析与创作手记</title>
+<meta name="description" content="泰坦尼克号素描未删减版官方网站，汇聚高清正版素描解析、创作幕后与深度访谈，呈现电影素描艺术的完整内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121214'/%3E%3Cpath d='M18 44 L32 16 L46 44 Z' fill='none' stroke='%2300e5b0' stroke-width='3'/%3E%3Ccircle cx='32' cy='36' r='4' fill='%2300e5b0'/%3E%3C/svg%3E">
+<style>
+:root{
+  --tt-bg:#121214;
+  --tt-bg-soft:#1a1a1e;
+  --tt-card:#202026;
+  --tt-line:#2e2e36;
+  --tt-text:#ececf1;
+  --tt-muted:#a0a0ab;
+  --tt-accent:#00e5b0;
+  --tt-accent-2:#ffd166;
+  --tt-danger:#ff5c6c;
+  --tt-radius:14px;
+  --tt-sticky-h:96px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--tt-sticky-h)}
+body{
+  background:var(--tt-bg);
+  color:var(--tt-text);
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.tt-container{width:min(1180px,92%);margin-inline:auto}
+.tt-sticky-wrap{position:sticky;top:0;z-index:80}
+/* ===== 公告条 ===== */
+.tt-announce{
+  background:linear-gradient(90deg,#00e5b0,#0bb8ff 55%,#7a5cff);
+  color:#0a0a0c;
+  font-size:13.5px;
+  font-weight:600;
+  letter-spacing:.2px;
+}
+.tt-announce-inner{
+  display:flex;align-items:center;gap:10px;
+  padding:9px 0;
+}
+.tt-announce-tag{
+  background:#0a0a0c;color:var(--tt-accent);
+  border-radius:6px;padding:2px 9px;font-size:11.5px;white-space:nowrap;
+}
+.tt-announce-text{
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.tt-announce-text b{font-weight:800}
+/* ===== 页头 ===== */
+.tt-header{
+  background:rgba(18,18,20,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--tt-line);
+}
+.tt-header-inner{
+  display:flex;align-items:center;gap:22px;
+  height:62px;
+}
+.tt-logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.tt-logo-mark{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(145deg,#00e5b0,#0bb8ff);
+  display:grid;place-items:center;
+  color:#0a0a0c;font-weight:900;font-size:17px;
+}
+.tt-logo-name{font-weight:800;font-size:16.5px;letter-spacing:.5px;white-space:nowrap}
+.tt-logo-name span{color:var(--tt-accent);font-weight:600;font-size:11.5px;margin-left:5px}
+.tt-nav{display:flex;gap:4px;margin-left:auto}
+.tt-nav a{
+  padding:7px 12px;border-radius:8px;font-size:14px;color:var(--tt-muted);
+  transition:color .18s,background .18s;white-space:nowrap;
+}
+.tt-nav a:hover{color:var(--tt-text);background:var(--tt-card)}
+.tt-header-tools{display:flex;align-items:center;gap:10px;margin-left:6px}
+.tt-search{
+  display:flex;align-items:center;gap:6px;
+  background:var(--tt-card);border:1px solid var(--tt-line);
+  border-radius:9px;padding:5px 8px;
+}
+.tt-search input{
+  background:transparent;border:0;outline:0;color:var(--tt-text);
+  font-size:13px;width:132px;
+}
+.tt-search input::placeholder{color:#6f6f7a}
+.tt-search button{
+  background:var(--tt-accent);color:#0a0a0c;border:0;border-radius:6px;
+  font-size:12px;font-weight:700;padding:4px 9px;
+}
+.tt-search-feedback{
+  font-size:12px;color:var(--tt-accent-2);min-height:0;
+  margin-top:4px;text-align:right;
+}
+.tt-burger{
+  display:none;background:var(--tt-card);border:1px solid var(--tt-line);
+  color:var(--tt-text);border-radius:8px;padding:6px 10px;font-size:17px;margin-left:auto;
+}
+/* ===== 首屏 ===== */
+.tt-hero{padding:56px 0 46px;position:relative}
+.tt-hero-grid{
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,5fr);
+  gap:46px;align-items:center;
+}
+.tt-hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;color:var(--tt-accent);letter-spacing:2px;
+  border:1px solid rgba(0,229,176,.35);border-radius:99px;padding:4px 13px;
+  margin-bottom:18px;
+}
+.tt-hero-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--tt-accent)}
+.tt-hero h1{
+  font-size:clamp(30px,4.5vw,52px);
+  line-height:1.18;letter-spacing:-.5px;font-weight:900;
+}
+.tt-hero h1 em{
+  font-style:normal;color:var(--tt-accent);
+  border-bottom:4px solid rgba(0,229,176,.3);
+}
+.tt-hero-lead{margin-top:16px;color:var(--tt-muted);font-size:15.5px;max-width:560px}
+.tt-hero-desc{
+  margin-top:18px;font-size:14.5px;color:#c8c8d2;
+  border-left:3px solid var(--tt-accent);padding-left:16px;
+}
+.tt-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;margin-top:26px;
+}
+.tt-stat{
+  background:var(--tt-card);border:1px solid var(--tt-line);
+  border-radius:12px;padding:14px 14px;
+}
+.tt-stat strong{display:block;font-size:23px;color:var(--tt-accent-2);font-weight:800}
+.tt-stat span{font-size:12.5px;color:var(--tt-muted)}
+.tt-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.tt-btn{
+  border:0;border-radius:10px;padding:11px 22px;font-size:14px;font-weight:700;
+  transition:transform .16s,box-shadow .16s,background .16s;
+}
+.tt-btn:active{transform:scale(.97)}
+.tt-btn-primary{background:var(--tt-accent);color:#0a0a0c}
+.tt-btn-primary:hover{box-shadow:0 0 0 3px rgba(0,229,176,.25)}
+.tt-btn-ghost{background:transparent;color:var(--tt-text);border:1px solid var(--tt-line)}
+.tt-btn-ghost:hover{background:var(--tt-card)}
+.tt-hero-visual{position:relative}
+.tt-hero-figure{
+  border-radius:18px;overflow:hidden;border:1px solid var(--tt-line);
+  box-shadow:0 24px 60px -24px rgba(0,229,176,.22);
+}
+.tt-hero-figure img{width:100%;aspect-ratio:16/12;object-fit:cover}
+.tt-hero-badge{
+  position:absolute;left:-14px;bottom:22px;
+  background:var(--tt-bg-soft);border:1px solid var(--tt-line);
+  border-radius:12px;padding:10px 15px;font-size:12.5px;color:var(--tt-muted);
+  box-shadow:0 12px 30px -12px rgba(0,0,0,.7);
+}
+.tt-hero-badge b{color:var(--tt-accent);font-size:15px;display:block}
+/* ===== 通用 section ===== */
+.tt-section{padding:52px 0}
+.tt-section-alt{background:var(--tt-bg-soft)}
+.tt-sec-head{margin-bottom:30px}
+.tt-sec-head h2{
+  font-size:clamp(22px,3vw,31px);letter-spacing:-.3px;font-weight:800;
+}
+.tt-sec-head h2 .tt-kw{color:var(--tt-accent)}
+.tt-sec-head p{margin-top:8px;color:var(--tt-muted);font-size:14.5px;max-width:760px}
+.tt-tag{
+  display:inline-block;font-size:11.5px;color:var(--tt-accent);
+  background:rgba(0,229,176,.1);border:1px solid rgba(0,229,176,.28);
+  border-radius:99px;padding:1px 9px;margin:0 4px 4px 0;
+}
+/* ===== 焦点大卡 + 文字列表 ===== */
+.tt-focus-grid{
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:30px;
+  align-items:start;
+}
+.tt-focus-main{
+  background:var(--tt-card);border:1px solid var(--tt-line);border-radius:16px;overflow:hidden;
+}
+.tt-focus-main img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.tt-focus-body{padding:20px 22px 22px}
+.tt-focus-body h3{font-size:20px;margin-bottom:8px}
+.tt-focus-body p{color:var(--tt-muted);font-size:14px}
+.tt-meta{
+  display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;
+  font-size:12.5px;color:var(--tt-muted);
+}
+.tt-meta strong{color:var(--tt-accent-2);font-weight:700}
+.tt-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.tt-icon-btn{
+  background:transparent;border:1px solid var(--tt-line);border-radius:8px;
+  color:var(--tt-muted);font-size:12.5px;padding:6px 12px;
+  display:inline-flex;align-items:center;gap:6px;transition:all .16s;
+}
+.tt-icon-btn:hover{border-color:var(--tt-accent);color:var(--tt-accent)}
+.tt-icon-btn.tt-on{color:var(--tt-danger);border-color:rgba(255,92,108,.5)}
+.tt-list{display:flex;flex-direction:column;gap:14px}
+.tt-list-item{
+  background:var(--tt-card);border:1px solid var(--tt-line);border-radius:13px;
+  padding:15px 17px;transition:transform .16s,border-color .16s;
+}
+.tt-list-item:hover{transform:translateY(-3px);border-color:rgba(0,229,176,.4)}
+.tt-list-item h3{font-size:15.5px;margin-bottom:5px}
+.tt-list-item p{font-size:13px;color:var(--tt-muted)}
+.tt-list-meta{
+  display:flex;flex-wrap:wrap;gap:11px;margin-top:9px;font-size:12px;color:#8b8b96;
+}
+.tt-list-meta b{color:var(--tt-accent);font-weight:700}
+/* ===== 专题 ===== */
+.tt-topic-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;
+}
+.tt-topic-card{
+  background:var(--tt-card);border:1px solid var(--tt-line);border-radius:15px;
+  padding:20px;display:flex;flex-direction:column;gap:12px;
+}
+.tt-topic-card h3{font-size:16.5px}
+.tt-topic-card > p{font-size:13.2px;color:var(--tt-muted)}
+.tt-topic-status{
+  font-size:11.5px;color:var(--tt-accent-2);
+  background:rgba(255,209,102,.09);border:1px solid rgba(255,209,102,.28);
+  border-radius:99px;padding:2px 10px;align-self:flex-start;
+}
+.tt-topic-card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.tt-topic-card li{
+  font-size:13px;color:#c9c9d3;padding-left:16px;position:relative;
+}
+.tt-topic-card li::before{
+  content:"";position:absolute;left:0;top:9px;width:6px;height:6px;
+  border-radius:2px;background:var(--tt-accent);
+}
+/* ===== 关键词深度解析 ===== */
+.tt-deep{
+  background:var(--tt-card);border:1px solid var(--tt-line);border-radius:18px;
+  padding:clamp(22px,4vw,42px);
+}
+.tt-deep h3{
+  font-size:19px;margin:26px 0 10px;color:var(--tt-accent-2);
+  padding-left:12px;border-left:4px solid var(--tt-accent);
+}
+.tt-deep h3:first-child{margin-top:0}
+.tt-deep p{font-size:14.5px;color:#cfcfd8;margin-bottom:12px}
+.tt-deep p b{color:var(--tt-accent)}
+.tt-deep-quote{
+  margin:18px 0;background:rgba(0,229,176,.06);
+  border-left:3px solid var(--tt-accent);border-radius:0 10px 10px 0;
+  padding:14px 18px;font-size:14px;color:#d6d6df;
+}
+/* ===== 创作者矩阵 ===== */
+.tt-author-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;
+}
+.tt-author{
+  display:flex;gap:15px;align-items:flex-start;
+  background:var(--tt-card);border:1px solid var(--tt-line);border-radius:14px;
+  padding:18px;transition:border-color .16s,transform .16s;
+}
+.tt-author:hover{border-color:rgba(0,229,176,.4);transform:translateY(-3px)}
+.tt-avatar{
+  width:56px;height:56px;border-radius:50%;flex:0 0 auto;
+  display:grid;place-items:center;font-weight:800;font-size:20px;color:#0a0a0c;
+}
+.tt-avatar-a{background:linear-gradient(145deg,#00e5b0,#0bb8ff)}
+.tt-avatar-b{background:linear-gradient(145deg,#ffd166,#ff8a5c)}
+.tt-avatar-c{background:linear-gradient(145deg,#7a5cff,#c68cff)}
+.tt-avatar-d{background:linear-gradient(145deg,#ff5c6c,#ffb3a7)}
+.tt-author-info h3{font-size:15.5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tt-author-info .tt-field{font-size:11.5px;color:var(--tt-accent);font-weight:600}
+.tt-author-info p{font-size:13px;color:var(--tt-muted);margin-top:6px}
+.tt-author-stats{
+  display:flex;gap:14px;margin-top:8px;font-size:12px;color:#8b8b96;
+}
+.tt-author-stats b{color:var(--tt-accent-2);font-weight:700}
+/* ===== 评论/用户评价 ===== */
+.tt-comment-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;
+}
+.tt-comment{
+  background:var(--tt-card);border:1px solid var(--tt-line);border-radius:13px;
+  padding:16px 18px;
+}
+.tt-comment-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tt-comment-ava{
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  font-size:13px;font-weight:800;color:#0a0a0c;
+}
+.tt-comment-name{font-size:13.5px;font-weight:700}
+.tt-comment-time{font-size:11.5px;color:#7d7d88;margin-left:auto}
+.tt-comment p{font-size:13.2px;color:#c6c6d0}
+.tt-comment-stars{color:var(--tt-accent-2);font-size:12.5px;margin-top:6px;letter-spacing:2px}
+/* ===== 企业动态/合作/FAQ ===== */
+.tt-two-col{
+  display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:32px;align-items:start;
+}
+.tt-news-list{display:flex;flex-direction:column;gap:12px}
+.tt-news-item{
+  display:flex;gap:14px;background:var(--tt-card);border:1px solid var(--tt-line);
+  border-radius:12px;padding:15px 17px;
+}
+.tt-news-date{
+  font-size:12px;color:var(--tt-accent);font-weight:700;white-space:nowrap;
+  border-right:1px solid var(--tt-line);padding-right:14px;
+}
+.tt-news-item h3{font-size:14.5px;margin-bottom:4px}
+.tt-news-item p{font-size:13px;color:var(--tt-muted)}
+.tt-partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tt-partner{
+  background:var(--tt-card);border:1px solid var(--tt-line);border-radius:11px;
+  padding:14px;font-size:13.5px;font-weight:700;text-align:center;color:#cfcfd8;
+}
+.tt-faq{margin-top:30px}
+.tt-faq details{
+  background:var(--tt-card);border:1px solid var(--tt-line);border-radius:12px;
+  padding:14px 18px;margin-bottom:10px;
+}
+.tt-faq summary{
+  cursor:pointer;font-size:14.5px;font-weight:700;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;
+}
+.tt-faq summary::-webkit-details-marker{display:none}
+.tt-faq summary::after{content:"+";color:var(--tt-accent);font-size:18px;line-height:1}
+.tt-faq details[open] summary::after{content:"−"}
+.tt-faq details p{margin-top:10px;font-size:13.5px;color:var(--tt-muted)}
+/* ===== 页脚 ===== */
+.tt-footer{
+  border-top:1px solid var(--tt-line);background:var(--tt-bg-soft);
+  padding:42px 0 26px;margin-top:24px;
+}
+.tt-footer-grid{
+  display:grid;grid-template-columns:minmax(0,5fr) repeat(3,minmax(0,3fr));
+  gap:30px;
+}
+.tt-footer-brand p{font-size:13px;color:var(--tt-muted);margin-top:10px;max-width:300px}
+.tt-footer h4{font-size:13.5px;margin-bottom:12px;color:var(--tt-text)}
+.tt-footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.tt-footer li{font-size:13px;color:var(--tt-muted)}
+.tt-footer a:hover{color:var(--tt-accent)}
+.tt-footer-bottom{
+  margin-top:30px;padding-top:18px;border-top:1px solid var(--tt-line);
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-size:12.5px;color:#7d7d88;
+}
+/* ===== 回到顶部 & Toast ===== */
+.tt-top-btn{
+  position:fixed;right:22px;bottom:26px;z-index:90;
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--tt-line);
+  background:var(--tt-card);color:var(--tt-accent);font-size:19px;
+  display:grid;place-items:center;opacity:0;pointer-events:none;
+  transition:opacity .22s,transform .22s;
+}
+.tt-top-btn.tt-show{opacity:1;pointer-events:auto}
+.tt-top-btn:hover{transform:translateY(-3px)}
+.tt-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:#00e5b0;color:#0a0a0c;font-size:13.5px;font-weight:700;
+  border-radius:10px;padding:10px 20px;opacity:0;pointer-events:none;
+  transition:opacity .25s,transform .25s;z-index:120;max-width:86vw;
+}
+.tt-toast.tt-show{opacity:1;transform:translate(-50%,0)}
+/* ===== 响应式 ===== */
+@media (max-width:980px){
+  .tt-hero-grid{grid-template-columns:1fr;gap:30px}
+  .tt-focus-grid{grid-template-columns:1fr}
+  .tt-topic-grid{grid-template-columns:1fr 1fr}
+  .tt-two-col{grid-template-columns:1fr}
+  .tt-footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  :root{--tt-sticky-h:104px}
+  .tt-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:var(--tt-bg-soft);border-bottom:1px solid var(--tt-line);
+    flex-direction:column;padding:10px 16px 16px;gap:2px;
+  }
+  .tt-nav.tt-open{display:flex}
+  .tt-header-inner{position:relative;flex-wrap:wrap;height:auto;padding:10px 0;gap:10px}
+  .tt-burger{display:block}
+  .tt-search{order:3;width:100%}
+  .tt-search input{flex:1;width:auto}
+  .tt-stats{grid-template-columns:1fr 1fr}
+  .tt-author-grid,.tt-comment-grid{grid-template-columns:1fr}
+  .tt-topic-grid{grid-template-columns:1fr}
+  .tt-footer-grid{grid-template-columns:1fr}
+  .tt-announce-inner{padding:8px 0}
+  .tt-announce-tag{display:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 公告条 + 页头（吸顶） -->
+<div class="tt-sticky-wrap">
+  <div class="tt-announce">
+    <div class="tt-container tt-announce-inner">
+      <span class="tt-announce-tag">官方发布</span>
+      <span class="tt-announce-text"><b>11月22日更新</b>：素描未删减版 · 沉船长镜头逐帧解析（第一辑）上线；创作幕后访谈《炭笔与胶片》同步开放；社区手绘挑战「泰坦尼克号素描未删减版」报名中。</span>
+    </div>
+  </div>
+  <header class="tt-header">
+    <div class="tt-container tt-header-inner">
+      <a href="#top" class="tt-logo" aria-label="泰坦尼克号素描未删减版官方网站首页">
+        <span class="tt-logo-mark">T</span>
+        <span class="tt-logo-name">素描未删减版<span>官方视频门户</span></span>
+      </a>
+      <button class="tt-burger" id="ttBurger" aria-label="展开导航" aria-expanded="false">☰</button>
+      <nav class="tt-nav" id="ttNav" aria-label="主导航">
+        <a href="#tt-focus">焦点内容</a>
+        <a href="#tt-topics">专题企划</a>
+        <a href="#tt-deep">深度解析</a>
+        <a href="#tt-authors">创作者</a>
+        <a href="#tt-voices">社区评价</a>
+        <a href="#tt-news">企业动态</a>
+        <a href="#tt-faq">帮助中心</a>
+      </nav>
+      <div class="tt-header-tools">
+        <div class="tt-search">
+          <input type="search" id="ttSearchInput" placeholder="搜索素描解析 / 幕后" aria-label="搜索站内内容">
+          <button id="ttSearchBtn" type="button">搜索</button>
+        </div>
+      </div>
+    </div>
+    <div class="tt-container"><div class="tt-search-feedback" id="ttSearchFeedback" role="status"></div></div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- HERO 首屏：左文右侧大图与数据条 -->
+  <section class="tt-hero" aria-labelledby="ttHeroTitle">
+    <div class="tt-container tt-hero-grid">
+      <div>
+        <span class="tt-hero-eyebrow">官方网站 · 品牌门户</span>
+        <h1 id="ttHeroTitle">泰坦尼克号素描未删减版</h1>
+        <p class="tt-hero-lead">以素描还原一部电影的灵魂，用镜头记录每一根炭笔的呼吸。这里是「泰坦尼克号素描未删减版」的官方视频内容平台，专注于电影素描艺术的完整表达。</p>
+        <p class="tt-hero-desc">作为深耕电影素描垂直领域的原创内容品牌，我们持续运营高清正版影像库，连接创作者与观众，让素描未删减版的每一帧匠心都能被看见。</p>
+        <div class="tt-stats" aria-label="品牌核心数据">
+          <div class="tt-stat"><strong>1,280+</strong><span>原创素描影像条目</span></div>
+          <div class="tt-stat"><strong>96.4%</strong><span>社区用户口碑好评</span></div>
+          <div class="tt-stat"><strong>38位</strong><span>签约创作者与画师</span></div>
+        </div>
+        <div class="tt-hero-actions">
+          <a class="tt-btn tt-btn-primary" href="#tt-focus">观看焦点内容</a>
+          <a class="tt-btn tt-btn-ghost" href="#tt-authors">认识创作者</a>
+          <a class="tt-btn tt-btn-ghost" href="#tt-topics">进入专题企划</a>
+        </div>
+      </div>
+      <div class="tt-hero-visual">
+        <figure class="tt-hero-figure">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23151d2e'/%3E%3Cstop offset='1' stop-color='%23293b5c'/%3E%3C/linearGradient%3E%3ClinearGradient id='sea' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%230f4b5c'/%3E%3Cstop offset='1' stop-color='%23071e2b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23sky)'/%3E%3Ccircle cx='640' cy='120' r='46' fill='%23ffd166' opacity='.85'/%3E%3Cpath d='M0 430 Q200 400 400 430 T800 424 L800 600 L0 600 Z' fill='url(%23sea)'/%3E%3Cpath d='M250 430 L300 250 L500 250 L550 430 Z' fill='%231c2f45'/%3E%3Crect x='295' y='258' width='210' height='150' fill='none' stroke='%2300e5b0' stroke-width='2' stroke-dasharray='7 6' opacity='.8'/%3E%3Cpath d='M320 400 L388 330 L455 402' fill='none' stroke='%23ececf1' stroke-width='3' opacity='.65'/%3E%3Cpath d='M370 300 L370 400' stroke='%23ececf1' stroke-width='2' opacity='.4'/%3E%3Ccircle cx='400' cy='330' r='9' fill='%2300e5b0'/%3E%3Cpath d='M60 470 Q150 448 240 470' fill='none' stroke='%2300e5b0' stroke-width='2' opacity='.5'/%3E%3Cpath d='M540 500 Q630 478 720 500' fill='none' stroke='%2300e5b0' stroke-width='2' opacity='.5'/%3E%3C/svg%3E" alt="泰坦尼克号素描未删减版主视觉：夜色中船体轮廓与炭笔线稿叠映" width="800" height="600">
+        </figure>
+        <div class="tt-hero-badge"><b>4K 高清正版</b>素描未删减版 · 逐帧修复上线</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 + 视频文字列表 -->
+  <section class="tt-section" id="tt-focus" aria-labelledby="ttFocusTitle">
+    <div class="tt-container">
+      <div class="tt-sec-head">
+        <h2 id="ttFocusTitle">焦点内容 · <span class="tt-kw">素描未删减版</span>高清首发</h2>
+        <p>每一期焦点内容均由官方编辑团队与签约画师联合制作，围绕泰坦尼克号素描未删减版的真实创作过程展开，提供可反复观看的高清精品内容。</p>
+      </div>
+
+      <div class="tt-focus-grid">
+        <article class="tt-focus-main">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%231b1b21'/%3E%3Cpath d='M0 320 Q160 300 320 320 T640 314 T800 318 L800 450 L0 450 Z' fill='%230d2b38'/%3E%3Cpath d='M180 320 L230 160 L570 160 L620 320 Z' fill='%23223449'/%3E%3Crect x='222' y='170' width='356' height='120' fill='none' stroke='%2300e5b0' stroke-width='2'/%3E%3Ccircle cx='400' cy='228' r='22' fill='none' stroke='%23ffd166' stroke-width='3'/%3E%3Cpath d='M60 380 Q200 352 340 380' stroke='%2300e5b0' stroke-width='2' fill='none' opacity='.55'/%3E%3Cpath d='M470 400 Q610 372 750 400' stroke='%2300e5b0' stroke-width='2' fill='none' opacity='.55'/%3E%3Ctext x='400' y='270' text-anchor='middle' fill='%2300e5b0' font-size='17' font-family='sans-serif'%3E素描未删减版 · 逐帧解析%3C/text%3E%3C/svg%3E" alt="焦点视频封面：炭笔线稿中的泰坦尼克号船体与逐帧解析标注" width="800" height="450">
+          <div class="tt-focus-body">
+            <h3>沉船长镜头逐帧解析：素描未删减版里的 12 处隐藏笔触</h3>
+            <p>从船艏破浪到船尾断裂，本集以素描原稿为线索，逐帧还原未删减版镜头背后的炭笔运动路径。画师在纸面上重建了沉船瞬间的情绪张力，并首次公开三版废弃草图。适合想系统学习电影素描语言、理解画面节奏与光影取舍的观众反复观看。</p>
+            <div class="tt-meta">
+              <span>作者：<strong>林墨白</strong></span>
+              <span>播放 <strong>128.6万</strong></span>
+              <span>点赞 <strong>9.7万</strong></span>
+              <span>收藏 <strong>4.2万</strong></span>
+            </div>
+            <div>
+              <span class="tt-tag">素描未删减版</span>
+              <span class="tt-tag">逐帧解析</span>
+              <span class="tt-tag">电影素描</span>
+            </div>
+            <div class="tt-actions">
+              <button class="tt-icon-btn tt-like-btn" type="button" data-count="97000" aria-label="点赞该视频">♡ <span>9.7万</span></button>
+              <button class="tt-icon-btn tt-fav-btn" type="button" aria-label="收藏该视频">☆ 收藏</button>
+              <button class="tt-icon-btn tt-copy-btn" type="button" data-title="沉船长镜头逐帧解析">🔗 复制链接</button>
+              <button class="tt-icon-btn tt-report-btn" type="button">反馈</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="tt-list">
+          <article class="tt-list-item">
+            <h3>炭笔与胶片：素描未删减版的材质实验</h3>
+            <p>画师用三种不同硬度炭笔复刻影片质感，对比纸张纹理与颗粒度对画面的影响。</p>
+            <div class="tt-list-meta"><span>作者：沈舟</span><b>播放 86.3万</b><span>点赞 6.1万</span></div>
+            <div class="tt-actions"><button class="tt-icon-btn tt-like-btn" type="button" data-count="61000">♡ <span>6.1万</span></button><button class="tt-icon-btn tt-fav-btn" type="button">☆ 收藏</button></div>
+          </article>
+          <article class="tt-list-item">
+            <h3>素描未删减版 · 船体结构的手绘考据</h3>
+            <p>从设计图纸到素描复原，讲解船体比例、铆钉密度与透视关系的手绘表达方法。</p>
+            <div class="tt-list-meta"><span>作者：顾远</span><b>播放 72.9万</b><span>点赞 5.4万</span></div>
+            <div class="tt-actions"><button class="tt-icon-btn tt-like-btn" type="button" data-count="54000">♡ <span>5.4万</span></button><button class="tt-icon-btn tt-fav-btn" type="button">☆ 收藏</button></div>
+          </article>
+          <article class="tt-list-item">
+            <h3>未删减版光影拆解：夜海素描的明暗控制</h3>
+            <p>一支素描如何同时表现月光、汽灯与海水反光？演示灰度分层与留白的节奏安排。</p>
+            <div class="tt-list-meta"><span>作者：苏念</span><b>播放 65.2万</b><span>点赞 4.8万</span></div>
+            <div class="tt-actions"><button class="tt-icon-btn tt-like-btn" type="button" data-count="48000">♡ <span>4.8万</span></button><button class="tt-icon-btn tt-fav-btn" type="button">☆ 收藏</button></div>
+          </article>
+          <article class="tt-list-item">
+            <h3>创作者手记：我为什么重画素描未删减版</h3>
+            <p>画师自述与电影素描的十年缘分，从临摹到再创作的心路，以及版本对比的意义。</p>
+            <div class="tt-list-meta"><span>作者：林墨白</span><b>播放 58.7万</b><span>点赞 4.1万</span></div>
+            <div class="tt-actions"><button class="tt-icon-btn tt-like-btn" type="button" data-count="41000">♡ <span>4.1万</span></button><button class="tt-icon-btn tt-fav-btn" type="button">☆ 收藏</button></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="tt-section tt-section-alt" id="tt-topics" aria-labelledby="ttTopicsTitle">
+    <div class="tt-container">
+      <div class="tt-sec-head">
+        <h2 id="ttTopicsTitle">专题企划 · 素描未删减版的多元解读</h2>
+        <p>围绕泰坦尼克号素描未删减版建立的长期内容企划，每一档专题都保持持续更新，覆盖技法、幕后、审美与社会视角。</p>
+      </div>
+      <div class="tt-topic-grid">
+        <article class="tt-topic-card">
+          <span class="tt-topic-status">更新至第 9 期 · 每周四更新</span>
+          <h3>《一帧一笔》技法专题</h3>
+          <p>把素描未删减版的长镜头拆成可练习的笔触单元，每期聚焦一个电影画面，从起稿到收尾完整演示。</p>
+          <ul>
+            <li>第9期：船艏甲板的逆光轮廓线</li>
+            <li>第8期：海面反光的排线密度控制</li>
+            <li>第7期：人物侧脸的炭笔虚化处理</li>
+          </ul>
+        </article>
+        <article class="tt-topic-card">
+          <span class="tt-topic-status">更新至第 5 期 · 双周更新</span>
+          <h3>《炭笔与胶片》幕后专题</h3>
+          <p>走入画室现场，记录素描未删减版创作团队的工作流程、修改痕迹与未被采用的方案。</p>
+          <ul>
+            <li>第5期：一次被推翻的船体透视方案</li>
+            <li>第4期：纸张选择如何影响最终成片</li>
+            <li>第3期：八小时连续作画的体力管理</li>
+          </ul>
+        </article>
+        <article class="tt-topic-card">
+          <span class="tt-topic-status">特别企划 · 开放报名</span>
+          <h3>《重绘经典》社区共创</h3>
+          <p>面向全站创作者发起素描未删减版主题重绘计划，入选作品将进入官方画廊并获得高清展映位。</p>
+          <ul>
+            <li>赛道一：船体结构手绘复原</li>
+            <li>赛道二：人物情感素描表达</li>
+            <li>赛道三：夜海光影自由创作</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析（≥800字） -->
+  <section class="tt-section" id="tt-deep" aria-labelledby="ttDeepTitle">
+    <div class="tt-container">
+      <div class="tt-sec-head">
+        <h2 id="ttDeepTitle">深度解析 · 什么是“<span class="tt-kw">泰坦尼克号素描未删减版</span>”</h2>
+        <p>这一板块以企业视角完整说明该内容系列的定位、制作方法、版本差异与行业价值，是理解本站品牌理念的核心文本。</p>
+      </div>
+      <div class="tt-deep">
+        <h3>一、名称背后的内容逻辑：从素描到未删减版</h3>
+        <p>“泰坦尼克号素描未删减版”并不是一个简单的标题组合，而是一套完整的内容方法论。它指的是以电影《泰坦尼克号》的经典场景为母题，用<b>素描</b>这一传统媒介进行再创作，并保留完整创作过程的<b>未删减</b>版本。与传统影视解说不同，本站呈现的不是剧情复述，而是画面上每一根线条的生成路径：炭笔落在纸面上的角度、力度、速度，以及画师在关键节点做出的取舍。官方团队将这一过程拆分为起稿、铺调、深入、调整四个阶段，每个阶段都有对应的视频条目与文字摘要，方便不同基础的用户按需观看。<b>素描未删减版</b>的核心价值，在于它把“结果”还原为“过程”，让观众看到一张素描如何从模糊的轮廓逐步获得呼吸感。</p>
+        <p>在制作流程上，我们坚持原创与正版原则。所有视频内容均由签约画师在自有画室完成实拍，配合多机位与微距镜头，确保铅笔灰的颗粒、纸面的纤维、擦除的痕迹都能被高清记录。后期环节保留完整的时间线，不刻意加速、不隐藏失败，这也是“未删减”三个字的真正含义。对于企业客户与教育机构，我们提供授权清晰的高清素材包，用于教学与展陈，持续运营的内容库让这些素材保持长期可用。</p>
+        <h3>二、版本差异：为什么“未删减”如此重要</h3>
+        <p>市面上关于素描创作的内容并不少见，但多数经过高度剪辑，只保留最精彩的几秒。这样的内容看起来流畅，却丢失了素描最珍贵的部分——<b>犹豫</b>与<b>调整</b>。在“素描未删减版”系列中，观众会看到画师在第 37 分钟突然停笔，重新审视船艏的倾斜角度；也会看到一整块阴影被擦掉重来。这些片段恰恰构成真实创作的全貌。官方编辑团队在每期视频中都标注了“关键决策点”时间码，便于回看与学习，这也是本站作为垂直领域内容平台的差异化优势。</p>
+        <p>版本差异还体现在取材角度。早期版本更关注画面的完整度，而“素描未删减版”在第二季之后加入了大量考据内容：船体铆钉的排列密度、甲板木质纹理的方向、夜海中月光与船灯的相对亮度。画师会先查阅历史影像与设计图纸，再决定画面的灰度分配。这种“考据先行”的工作方式，让素描未删减版不仅是艺术作品，也具备了一定的文献价值，受到不少影视美术从业者的持续关注。</p>
+        <div class="tt-deep-quote">“我们不是要画一张更漂亮的素描，而是想留下一次真实的创作现场。未删减，是对观众判断力的尊重。”——官方创作手记摘录</div>
+        <h3>三、社区与内容生态：让素描被更多人看见</h3>
+        <p>作为一家强调社区活力的视频品牌，我们并不把自己定义为单向输出方。围绕“泰坦尼克号素描未删减版”，社区已经形成稳定的共创机制：每一期视频发布后，画师会在评论区挑选典型问题做二次讲解；每月一次的“重绘经典”挑战赛，鼓励用户上传自己的版本，优秀作品会进入官方画廊并获得展映推荐。这种机制让<b>素描未删减版</b>从单一内容系列，成长为可参与、可讨论、可沉淀的内容生态。平台的标签体系、收藏夹与专题页，进一步降低了用户检索与回溯的成本。</p>
+        <p>从行业观察角度看，素描类内容的受众正在扩大。过去它被视为美术生的专属领域，如今越来越多的影视爱好者、设计从业者、甚至普通观众，愿意花四十分钟看一支完整的创作视频。这正是我们持续投入的原因：用高品质、正版、高清的内容，把一个小众题材做成值得信赖的垂直内容品牌。未来一年，官方将新增“素描未删减版·城市巡展”计划，把画室现场带到线下，让创作者与用户面对面交流，进一步扩大品牌影响力与社区陪伴感。</p>
+        <h3>四、面向未来的创作计划与官方承诺</h3>
+        <p>在内容规划上，官方已确定下一阶段的三条主线：其一是继续深化素描未删减版的技术拆解，增加慢速示范与错误案例复盘；其二是拓展人物题材，从场景素描延伸到情绪与叙事；其三是建立创作者培养体系，通过开放投稿与联合创作，让更多新面孔进入内容生态。我们承诺所有官方发布内容均保持原创、正版、高清，并持续完善版权说明与授权流程，做到透明可查。</p>
+        <p>与此同时，品牌将坚持用户至上的运营原则。每一条用户反馈都会进入内容复盘会议，影响后续选题方向。我们相信，真正值得信赖的视频品牌，不是靠一次爆款建立口碑，而是靠长期稳定的品质输出与真实的社区互动。素描未删减版会继续更新，也会继续保留那些不完美的笔触，因为正是这些痕迹，让一部电影的记忆有了温度，也让一个品牌拥有了陪伴用户成长的力量。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者矩阵（双列简介） -->
+  <section class="tt-section tt-section-alt" id="tt-authors" aria-labelledby="ttAuthorsTitle">
+    <div class="tt-container">
+      <div class="tt-sec-head">
+        <h2 id="ttAuthorsTitle">创作者矩阵 · 素描未删减版背后的手</h2>
+        <p>他们既是画师也是讲述者。以下创作者长期参与泰坦尼克号素描未删减版的官方制作，用各自的语言拓展素描影像的边界。</p>
+      </div>
+      <div class="tt-author-grid">
+        <article class="tt-author">
+          <span class="tt-avatar tt-avatar-a">林</span>
+          <div class="tt-author-info">
+            <h3>林墨白 <span class="tt-field">电影素描 · 逐帧解析</span></h3>
+            <p>官方签约画师，专注电影场景素描与镜头语言还原。擅长用炭笔表现船体结构与夜海光影，主导素描未删减版第一季与第三季的逐帧解析系列，习惯在镜头前完整保留修改过程。</p>
+            <div class="tt-author-stats"><span>作品 <b>86</b></span><span>粉丝 <b>24.7万</b></span></div>
+          </div>
+        </article>
+        <article class="tt-author">
+          <span class="tt-avatar tt-avatar-b">沈</span>
+          <div class="tt-author-info">
+            <h3>沈舟 <span class="tt-field">材质实验 · 技法教学</span></h3>
+            <p>材料研究者与素描教师，长期测试不同炭笔、纸张与固定液对成片的影响。在素描未删减版中负责材质实验与慢速示范，视频节奏沉稳，讲解细致，被社区称为“最舍得给细节的人”。</p>
+            <div class="tt-author-stats"><span>作品 <b>62</b></span><span>粉丝 <b>18.3万</b></span></div>
+          </div>
+        </article>
+        <article class="tt-author">
+          <span class="tt-avatar tt-avatar-c">顾</span>
+          <div class="tt-author-info">
+            <h3>顾远 <span class="tt-field">结构考据 · 历史影像</span></h3>
+            <p>影视美术背景出身，擅长把设计图纸转化为可手绘的结构语言。在素描未删减版中负责船体考据与比例校正，常以图纸与素描并置的方式讲解透视，内容严谨，是许多从业者的参考资料。</p>
+            <div class="tt-author-stats"><span>作品 <b>47</b></span><span>粉丝 <b>13.9万</b></span></div>
+          </div>
+        </article>
+        <article class="tt-author">
+          <span class="tt-avatar tt-avatar-d">苏</span>
+          <div class="tt-author-info">
+            <h3>苏念 <span class="tt-field">光影拆解 · 情感叙事</span></h3>
+            <p>自由插画师，偏爱夜海题材与灰度控制。在素描未删减版中负责光影拆解与人物情绪段落，善于用留白制造呼吸感，作品常被用于社区光影练习的示范案例，风格温和而有力量。</p>
+            <div class="tt-author-stats"><span>作品 <b>41</b></span><span>粉丝 <b>11.6万</b></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 社区评价（双列短评） -->
+  <section class="tt-section" id="tt-voices" aria-labelledby="ttVoicesTitle">
+    <div class="tt-container">
+      <div class="tt-sec-head">
+        <h2 id="ttVoicesTitle">社区评价 · 素描未删减版的真实回响</h2>
+        <p>来自观众、学员与从业者的不同声音。每一条评价都指向一个具体的观看场景，也持续影响着官方选题。</p>
+      </div>
+      <div class="tt-comment-grid">
+        <article class="tt-comment">
+          <div class="tt-comment-head"><span class="tt-comment-ava tt-avatar-a">周</span><span class="tt-comment-name">周末画画的阿周</span><span class="tt-comment-time">2小时前</span></div>
+          <p>第一次完整看完一支四十分钟的素描视频，居然一点没快进。未删减版保留的那些犹豫和擦除，比成品更打动我。</p>
+          <div class="tt-comment-stars">★★★★★</div>
+        </article>
+        <article class="tt-comment">
+          <div class="tt-comment-head"><span class="tt-comment-ava tt-avatar-c">电</span><span class="tt-comment-name">电影美术小课堂</span><span class="tt-comment-time">5小时前</span></div>
+          <p>船体结构那期的考据部分非常扎实，铆钉密度和透视关系的讲解可以直接放进课堂。希望官方继续做高清素材包。</p>
+          <div class="tt-comment-stars">★★★★★</div>
+        </article>
+        <article class="tt-comment">
+          <div class="tt-comment-head"><span class="tt-comment-ava tt-avatar-b">慢</span><span class="tt-comment-name">慢速铅笔</span><span class="tt-comment-time">昨天</span></div>
+          <p>光影拆解那集对我帮助最大。以前画夜海总是糊成一团，现在知道要先分灰度层级再处理留白。</p>
+          <div class="tt-comment-stars">★★★★☆</div>
+        </article>
+        <article class="tt-comment">
+          <div class="tt-comment-head"><span class="tt-comment-ava tt-avatar-d">海</span><span class="tt-comment-name">海边画室主理人</span><span class="tt-comment-time">昨天</span></div>
+          <p>社区共创的赛道设置很友好，新手也能选到合适的题目。我们画室组织了集体投稿，孩子们很有参与感。</p>
+          <div class="tt-comment-stars">★★★★★</div>
+        </article>
+        <article class="tt-comment">
+          <div class="tt-comment-head"><span class="tt-comment-ava tt-avatar-a">林</span><span class="tt-comment-name">林间速写</span><span class="tt-comment-time">2天前</span></div>
+          <p>唯一的小建议：部分长视频的章节标记可以再细一点，方便反复回看某个笔触阶段。整体质量在同类里算领先。</p>
+          <div class="tt-comment-stars">★★★★☆</div>
+        </article>
+        <article class="tt-comment">
+          <div class="tt-comment-head"><span class="tt-comment-ava tt-avatar-c">胶</span><span class="tt-comment-name">胶片与炭条</span><span class="tt-comment-time">3天前</span></div>
+          <p>材质实验那期让我换了纸，效果差别真的很大。官方愿意把失败案例也剪进去，这点很难得。</p>
+          <div class="tt-comment-stars">★★★★★</div>
+        </article>
+        <article class="tt-comment">
+          <div class="tt-comment-head"><span class="tt-comment-ava tt-avatar-b">十</span><span class="tt-comment-name">十号自习室</span><span class="tt-comment-time">4天前</span></div>
+          <p>画面很干净，播放器体验也顺。就是希望手机端能默认记住上次看到的位置，学习类长视频很需要。</p>
+          <div class="tt-comment-stars">★★★★☆</div>
+        </article>
+        <article class="tt-comment">
+          <div class="tt-comment-head"><span class="tt-comment-ava tt-avatar-d">木</span><span class="tt-comment-name">木刻小栈</span><span class="tt-comment-time">5天前</span></div>
+          <p>从第一季追到现在的特别企划，能明显看到官方在认真经营社区，不是发完就走。期待线下巡展。</p>
+          <div class="tt-comment-stars">★★★★★</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 + 合作品牌 + FAQ -->
+  <section class="tt-section tt-section-alt" id="tt-news" aria-labelledby="ttNewsTitle">
+    <div class="tt-container">
+      <div class="tt-sec-head">
+        <h2 id="ttNewsTitle">企业动态与帮助 · 素描未删减版持续运营中</h2>
+        <p>官方资讯、合作进展与常见问题集中在此，帮助新用户快速了解品牌，也让长期观众掌握最新更新节奏。</p>
+      </div>
+      <div class="tt-two-col">
+        <div>
+          <h3 style="font-size:17px;margin-bottom:14px;color:var(--tt-accent-2)">最近的企业动态</h3>
+          <div class="tt-news-list">
+            <article class="tt-news-item">
+              <span class="tt-news-date">11-22</span>
+              <div><h3>素描未删减版第二辑正式上线</h3><p>新增六个逐帧解析条目，同步开放高清正版素材包申请通道。</p></div>
+            </article>
+            <article class="tt-news-item">
+              <span class="tt-news-date">11-15</span>
+              <div><h3>官方与三家美术教育机构达成内容合作</h3><p>围绕素描未删减版共建教学案例库，首批课程素材已进入试用阶段。</p></div>
+            </article>
+            <article class="tt-news-item">
+              <span class="tt-news-date">11-08</span>
+              <div><h3>“重绘经典”共创计划报名人数破万</h3><p>官方追加两个创作赛道，并延长作品提交周期，详情见专题页说明。</p></div>
+            </article>
+            <article class="tt-news-item">
+              <span class="tt-news-date">10-30</span>
+              <div><h3>播放器体验升级：章节标记与倍速记忆</h3><p>基于社区反馈优化，长视频学习场景更顺手，后续将继续迭代。</p></div>
+            </article>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-size:17px;margin-bottom:14px;color:var(--tt-accent-2)">合作品牌与伙伴</h3>
+          <div class="tt-partner-grid">
+            <div class="tt-partner">炭语画材</div>
+            <div class="tt-partner">白鹭纸业</div>
+            <div class="tt-partner">光影美术学院</div>
+            <div class="tt-partner">城市影像档案馆</div>
+            <div class="tt-partner">慢速铅笔工作室</div>
+            <div class="tt-partner">深蓝展陈设计</div>
+          </div>
+          <div class="tt-actions" style="margin-top:18px">
+            <button class="tt-icon-btn tt-submit-btn" type="button">我要投稿</button>
+            <button class="tt-icon-btn tt-copy-btn" type="button" data-title="泰坦尼克号素描未删减版">🔗 复制本站链接</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tt-faq" id="tt-faq">
+        <h3 style="font-size:17px;margin-bottom:14px;color:var(--tt-accent-2)">常见问题</h3>
+        <details>
+          <summary>“素描未删减版”和普通素描教程有什么区别？</summary>
+          <p>普通教程通常只保留完成步骤，而素描未删减版保留完整的创作现场，包括犹豫、修改与失败尝试，更适合想理解创作决策逻辑的观众。</p>
+        </details>
+        <details>
+          <summary>视频内容是否为正版高清？可以用于教学吗？</summary>
+          <p>所有官方发布内容均为原创拍摄与制作，提供高清版本。教育机构可通过官方渠道申请授权素材包，用于课堂教学与展陈。</p>
+        </details>
+        <details>
+          <summary>如何参与社区共创与重绘挑战？</summary>
+          <p>进入专题企划页选择赛道，按页面提示提交作品即可。官方会定期公示入选名单，并为优秀创作者提供展映位与联合创作机会。</p>
+        </details>
+        <details>
+          <summary>更新频率是怎样的？</summary>
+          <p>主线逐帧解析保持每周一更，幕后与材质实验为双周更新，特别企划按赛季推进。具体排期会在公告条与企业动态中同步。</p>
+        </details>
+        <details>
+          <summary>是否支持下载离线观看？</summary>
+          <p>官方高清内容在授权范围内支持下载，具体以每期条目的授权说明为准。未经许可不得二次分发。</p>
+        </details>
+        <details>
+          <summary>我想成为签约创作者，需要准备什么？</summary>
+          <p>通过投稿入口提交作品集与创作方向说明，官方团队会在十个工作日内回复。我们更看重持续的创作能力与真实的表达意愿。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 页脚 -->
+<footer class="tt-footer">
+  <div class="tt-container">
+    <div class="tt-footer-grid">
+      <div class="tt-footer-brand">
+        <div class="tt-logo"><span class="tt-logo-mark">T</span><span class="tt-logo-name">素描未删减版<span>官方视频门户</span></span></div>
+        <p>泰坦尼克号素描未删减版官方网站。以原创、正版、高清的影像内容，持续运营素描艺术垂直领域的内容生态，陪伴创作者与观众共同成长。</p>
+      </div>
+      <div>
+        <h4>内容入口</h4>
+        <ul>
+          <li><a href="#tt-focus">焦点内容</a></li>
+          <li><a href="#tt-topics">专题企划</a></li>
+          <li><a href="#tt-deep">深度解析</a></li>
+          <li><a href="#tt-authors">创作者矩阵</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>官方信息</h4>
+        <ul>
+          <li><a href="#tt-news">企业动态</a></li>
+          <li><a href="#tt-news">合作品牌</a></li>
+          <li><a href="#tt-faq">帮助中心</a></li>
+          <li><a href="#tt-voices">社区评价</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系与投稿</h4>
+        <ul>
+          <li>投稿邮箱：creator@titanic-sketch.example</li>
+          <li>合作咨询：brand@titanic-sketch.example</li>
+          <li>内容授权：license@titanic-sketch.example</li>
+          <li>工作时间：周一至周五 10:00–18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tt-footer-bottom">
+      <span>© 2026 泰坦尼克号素描未删减版官方网站 · 版权所有 · 持续运营中</span>
+      <span>备案号：京ICP备2026000000号-1 · 原创内容未经授权禁止转载</span>
+    </div>
+  </div>
+</footer>
+
+<button class="tt-top-btn" id="ttTopBtn" aria-label="回到顶部">↑</button>
+<div class="tt-toast" id="ttToast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+  var toastEl = document.getElementById("ttToast");
+  var toastTimer = null;
+  function toast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add("tt-show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove("tt-show"); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var burger = document.getElementById("ttBurger");
+  var nav = document.getElementById("ttNav");
+  if(burger && nav){
+    burger.addEventListener("click", function(){
+      var open = nav.classList.toggle("tt-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.textContent = open ? "✕" : "☰";
+    });
+    nav.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        nav.classList.remove("tt-open");
+        burger.setAttribute("aria-expanded","false");
+        burger.textContent = "☰";
+      });
+    });
+  }
+
+  /* 搜索反馈 */
+  var searchInput = document.getElementById("ttSearchInput");
+  var searchBtn = document.getElementById("ttSearchBtn");
+  var searchFeedback = document.getElementById("ttSearchFeedback");
+  var searchData = [
+    "沉船长镜头逐帧解析 · 素描未删减版",
+    "炭笔与胶片：材质实验",
+    "船体结构的手绘考据",
+    "夜海素描的明暗控制",
+    "创作者手记：我为什么重画素描未删减版",
+    "重绘经典共创计划"
+  ];
+  function doSearch(){
+    if(!searchInput || !searchFeedback) return;
+    var kw = searchInput.value.trim();
+    if(!kw){
+      searchFeedback.textContent = "请输入素描、船体或幕后等关键词";
+      return;
+    }
+    var hits = searchData.filter(function(item){
+      return item.indexOf(kw) !== -1 || kw.indexOf("素描") !== -1;
+    });
+    if(hits.length){
+      searchFeedback.textContent = "找到 " + hits.length + " 条相关内容：" + hits[0];
+      toast("为你定位到「" + hits[0] + "」");
+    }else{
+      searchFeedback.textContent = "暂无匹配内容，试试「素描未删减版」或「船体」";
+    }
+  }
+  if(searchBtn) searchBtn.addEventListener("click", doSearch);
+  if(searchInput) searchInput.addEventListener("keydown", function(e){
+    if(e.key === "Enter"){ e.preventDefault(); doSearch(); }
+  });
+
+  /* 点赞 +1/-1 */
+  document.querySelectorAll(".tt-like-btn").forEach(function(btn){
+    var span = btn.querySelector("span");
+    var base = parseInt(btn.getAttribute("data-count") || "0", 10);
+    var active = false;
+    btn.addEventListener("click", function(){
+      active = !active;
+      var val = active ? base + 1 : base;
+      if(span){
+        span.textContent = val >= 10000 ? (val/10000).toFixed(1).replace(/\.0$/,"") + "万" : String(val);
+      }
+      btn.classList.toggle("tt-on", active);
+      toast(active ? "感谢点赞，已记录你的喜欢" : "已取消点赞");
+    });
+  });
+
+  /* 收藏切换 */
+  document.querySelectorAll(".tt-fav-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var on = btn.classList.toggle("tt-on");
+      btn.innerHTML = on ? "★ 已收藏" : "☆ 收藏";
+      toast(on ? "已加入我的收藏" : "已取消收藏");
+    });
+  });
+
+  /* 复制链接 */
+  document.querySelectorAll(".tt-copy-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var title = btn.getAttribute("data-title") || "泰坦尼克号素描未删减版";
+      var shareText = "我在泰坦尼克号素描未删减版官方网站看到「" + title + "」，推荐给你。";
+      function done(msg){ toast(msg); }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(shareText).then(function(){
+          done("链接已复制，可分享给朋友");
+        }).catch(function(){
+          done("复制失败，请手动分享");
+        });
+      }else{
+        var ta = document.createElement("textarea");
+        ta.value = shareText;
+        document.body.appendChild(ta);
+        ta.select();
+        try{ document.execCommand("copy"); done("链接已复制，可分享给朋友"); }
+        catch(e){ done("复制失败，请手动分享"); }
+        document.body.removeChild(ta);
+      }
+    });
+  });
+
+  /* 反馈 / 投稿 */
+  document.querySelectorAll(".tt-report-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      toast("反馈通道已开启，编辑团队会尽快查看");
+    });
+  });
+  document.querySelectorAll(".tt-submit-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      toast("投稿入口已开启，请按页面提示提交作品");
+    });
+  });
+
+  /* 回到顶部 */
+  var topBtn = document.getElementById("ttTopBtn");
+  window.addEventListener("scroll", function(){
+    if(!topBtn) return;
+    if(window.scrollY > 480){ topBtn.classList.add("tt-show"); }
+    else{ topBtn.classList.remove("tt-show"); }
+  }, {passive:true});
+  if(topBtn){
+    topBtn.addEventListener("click", function(){
+      window.scrollTo({top:0, behavior:"smooth"});
+    });
+  }
+})();
+</script>
+</body>
+  </html>
